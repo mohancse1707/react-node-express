@@ -5,7 +5,7 @@
  */
 
 import { combineReducers } from 'redux';
-import beerRecipesState, { BeerRecipesState } from '../../module/user-management/beer-recipes.reducer';
+import beerRecipesState, { BeerRecipesState } from '../../module/beer-recipes/beer-recipes.reducer';
 
 export interface IRootState {
     readonly beerRecipesState: BeerRecipesState;

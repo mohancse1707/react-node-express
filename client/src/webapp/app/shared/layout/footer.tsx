@@ -7,7 +7,7 @@ const Footer = props => (
                 <div className="row">
                     <div className="col-sm-9">
                         <div className="copyRight">
-                            <p>Copyright © 2012 . All rights reserved.</p>
+                            <p>Copyright © 2020 . All rights reserved.</p>
                         </div>
                     </div>
                     <div className="col-sm-3 text-right">

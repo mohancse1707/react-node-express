@@ -10,7 +10,7 @@ import { RouteComponentProps, RouteProps } from 'react-router-dom';
 import { IRootState } from 'app/shared/reducers';
 import { getAllBeerRecipes, searchBeerRecipes } from './beer-recipes.reducer';
 import { IBeerRecipes } from 'app/shared/models/beer-recipes';
-import { Badge } from 'reactstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // @ts-ignore
 export interface IBeerRecipesProps extends StateProps, DispatchProps, RouteProps, RouteComponentProps<{}> {
 }
@@ -19,6 +19,7 @@ export interface IBeerRecipesState {
     beersList: IBeerRecipes[];
     showModal: boolean;
     beerName: string;
+    sortOrder: string;
 }
 
 export class BeerRecipes extends React.Component<IBeerRecipesProps, IBeerRecipesState> {
@@ -26,7 +27,8 @@ export class BeerRecipes extends React.Component<IBeerRecipesProps, IBeerRecipes
     state: IBeerRecipesState = {
         beersList: [],
         showModal: false,
-        beerName: ''
+        beerName: '',
+        sortOrder: 'asc'
     };
 
     componentDidMount(): void {
@@ -53,6 +55,19 @@ export class BeerRecipes extends React.Component<IBeerRecipesProps, IBeerRecipes
         }
     };
 
+    sortingData = p => {
+        const { beersList, sortOrder } = this.state;
+        let sorted = null;
+        if (sortOrder === 'asc') {
+            sorted = beersList.sort((a, b) => ((p === 'fermentation' ? (a.method.fermentation.temp.value < b.method.fermentation.temp.value) : (a[p] < b[p])) ? -1 : 1));
+        }
+        if (sortOrder === 'desc') {
+            sorted = beersList.sort((a, b) => ((p === 'fermentation' ? (a.method.fermentation.temp.value > b.method.fermentation.temp.value) : (a[p] > b[p])) ? -1 : 1));
+        }
+        const changeOrder = this.state.sortOrder === 'asc' ? 'desc' : 'asc';
+        this.setState(state => ({ sortOrder: changeOrder, beersList: sorted }));
+    };
+
     render() {
         const { beersList, beerName } = this.state;
         return (
@@ -77,11 +92,26 @@ export class BeerRecipes extends React.Component<IBeerRecipesProps, IBeerRecipes
                         <table className="table table-bordered table-hover">
                             <thead className="bg-purple text-nowrap">
                             <tr>
-                                <th scope="col">Beer Name</th>
-                                <th scope="col">First Brewed</th>
-                                <th scope="col">PH Level</th>
-                                <th scope="col">Fermentation Method</th>
-                                <th scope="col">Tag Line</th>
+                                <th scope="col" onClick={this.sortingData.bind(this, 'name')}>
+                                    Beer Name
+                                    <FontAwesomeIcon style={{ marginLeft: '10px', fontSize: '20px', paddingTop: '5px' }} icon="sort" />
+                                </th>
+                                <th scope="col" onClick={this.sortingData.bind(this, 'first_brewed')}>
+                                    First Brewed
+                                    <FontAwesomeIcon style={{ marginLeft: '10px', fontSize: '20px', paddingTop: '5px' }} icon="sort" />
+                                </th>
+                                <th scope="col" onClick={this.sortingData.bind(this, 'ph')}>
+                                    PH Level
+                                    <FontAwesomeIcon style={{ marginLeft: '10px', fontSize: '20px', paddingTop: '5px' }} icon="sort" />
+                                </th>
+                                <th scope="col" onClick={this.sortingData.bind(this, 'fermentation')}>
+                                    Fermentation Method
+                                    <FontAwesomeIcon style={{ marginLeft: '10px', fontSize: '20px', paddingTop: '5px' }} icon="sort" />
+                                </th>
+                                <th scope="col" onClick={this.sortingData.bind(this, 'tagline')}>
+                                    Tag Line
+                                    <FontAwesomeIcon style={{ marginLeft: '10px', fontSize: '20px', paddingTop: '5px' }} icon="sort" />
+                                </th>
                                 <th scope="col">Food Pairing</th>
                                 <th scope="col">Image</th>
                             </tr>
@@ -139,9 +169,11 @@ const mapStateToProps = (storeState: IRootState) => ({
     beers: storeState.beerRecipesState.beers
 });
 
+// @ts-ignore
 const mapDispatchToProps = { getAllBeerRecipes, searchBeerRecipes };
-
+// @ts-ignore
 type StateProps = ReturnType<typeof mapStateToProps>;
+// @ts-ignore
 type DispatchProps = typeof mapDispatchToProps;
-
+// @ts-ignore
 export default connect(mapStateToProps, mapDispatchToProps)(BeerRecipes);

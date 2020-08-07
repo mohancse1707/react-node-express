@@ -11,7 +11,7 @@ const initializeCache = new DataCache(getBeerRecipes, 1);
 
 const ServerRoutes = (server: Express) => {
 
-    /*Load the data on server startup and keep it in cache manager*/
+    /* Load the data on server startup and keep it in cache manager */
     server.get('/', async (req, res) => {
         return res.json(await initializeCache.getData());
     });
@@ -20,7 +20,7 @@ const ServerRoutes = (server: Express) => {
         return res.json(await initializeCache.getData());
     });
 
-    /*Search data by bearName */
+    /* Search data by bearName */
     server.get('/search/:beerName', async (req, res) => {
         let list : any[] = await initializeCache.getData();
         console.log('Search parameter value', req.params.beerName);

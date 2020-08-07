@@ -21,17 +21,17 @@ class DataCache {
     getData = async () => {
         if (!this.cache || this.isCacheExpired()) {
             console.log('Cache is expired - fetching from public API');
-            console.log('Cache Expiry Time =', new Date(this.fetchDate.getTime() + this.millisecondsToLive))
             try{
                 const response = await this.fetchFunction();
                 this.cache = response.data;
                 this.fetchDate = new Date();
+                console.log('Next expiry time =', new Date(this.fetchDate.getTime() + this.millisecondsToLive).toLocaleString())
                 return response.data;
             } catch(e) {
                 return e;
             }
         } else {
-            console.log('Cache Not expired - fetching from cache data');
+            console.log('Cache is not expired - fetching from cache data');
             return this.cache;
         }
     }

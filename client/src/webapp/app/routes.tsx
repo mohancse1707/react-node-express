@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import BeerRecipes from 'app/module/user-management/beer-recipes';
+import BeerRecipes from 'app/module/beer-recipes/beer-recipes';
 
 const Routes = () => (
     <div className="mt-175">
