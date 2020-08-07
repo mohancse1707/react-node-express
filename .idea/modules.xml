@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../jhipster-sample-app-react/.idea/jhipster-sample-app-react.iml" filepath="$PROJECT_DIR$/../jhipster-sample-app-react/.idea/jhipster-sample-app-react.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../GitHub/mk-security-webapp/.idea/mk-security-webapp.iml" filepath="$PROJECT_DIR$/../../GitHub/mk-security-webapp/.idea/mk-security-webapp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/react-node-express.iml" filepath="$PROJECT_DIR$/.idea/react-node-express.iml" />
+    </modules>
+  </component>
+</project>
