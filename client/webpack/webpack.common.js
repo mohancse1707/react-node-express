@@ -79,7 +79,7 @@ module.exports = options => ({
       template: './src/webapp/index.html',
       chunksSortMode: 'auto',
       inject: 'body',
-      baseUrl: options.env === 'development'?'/':'/'
+      baseUrl: options.env === 'development' ? '/' : '/'
     }),
     new CopyWebpackPlugin([
       { from: './src/webapp/static/', to: 'static' }
@@ -118,5 +118,5 @@ const getTsLoaderRules = env => {
       loader: 'react-hot-loader/webpack'
     });
   }
-  return rules
+  return rules;
 };

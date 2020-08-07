@@ -12,7 +12,7 @@ const commonConfig = require('./webpack.common.js');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const ENV = 'development';
 
-module.exports = (options) => webpackMerge(commonConfig({env: ENV}), {
+module.exports =options => webpackMerge(commonConfig({ env: ENV }), {
   devtool: 'source-map',
   mode: ENV,
   entry: [
@@ -62,7 +62,7 @@ module.exports = (options) => webpackMerge(commonConfig({env: ENV}), {
       proxy: {
         target: `http${options.tls ? 's' : ''}://localhost:9060`,
         proxyOptions: {
-          changeOrigin: false  //pass the Host header to the backend unchanged  https://github.com/Browsersync/browser-sync/issues/430
+          changeOrigin: false  // pass the Host header to the backend unchanged  https://github.com/Browsersync/browser-sync/issues/430
         }
       },
       socket: {
@@ -76,7 +76,7 @@ module.exports = (options) => webpackMerge(commonConfig({env: ENV}), {
     new webpack.HotModuleReplacementPlugin(),
     new writeFilePlugin(),
     new webpack.WatchIgnorePlugin([
-      utils.root('src/test'),
+      utils.root('src/test')
     ])
   ].filter(Boolean)
 });

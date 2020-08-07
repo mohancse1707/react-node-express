@@ -1,41 +1,91 @@
-## Node Express Server App
+## Node Express Server and React Redux web application
 
-Sample application for data list search and sorting using react redux node express 
+Sample web application for data list, search and sorting data without any database using react redux node express 
 
-### Introduction
+### Getting Started
 
-This document describes how to create express server apps and fetch data from remote public API, search data without any database using the following modules.
-
-### Package Stack
-
-Following are the modules and node versions used in this application.
-
-* Node v12 
-* Npm v6
-
-Install the below packages as given below.
-
-npm init
-
-npm install -D typescript tslint
-
-npm install -D @types/express 
-
-npm install -S express 
-
-create tsconfig.json
-
-./node_modules/.bin/tslint --init
-
-```add "no-console": false```
+This application is developed with decoupled architecture design where server and client deployed separately.
 
 
-Cold reloading is nice for local development
+### Technologies
 
-npm install -D @types/node 
+**Front End**
 
-npm install -D ts-node nodemon
+* [Node] v12.x.x 
+* Npm v6.x.x
+* Typescript
 
-npm install -S axios
+**Back End**
 
-npm install jest --save-dev
+* [Node] v12.x.x 
+* Npm v6.x.x
+* React Redux
+* Typescript
+* Webpack
+
+```Make sure node is installed and set the path in the system before proceeding to deployment steps.```
+
+### App Structure
+
+```Note: I am mentioning only high level files/folders ```
+
+```bash
+
+├── public
+│   ├── client
+│   │   ├── src
+│   │   │   ├── test
+│   │   │   │   ├── app
+│   │   │   ├── webapp
+│   ├── server
+│   │   ├── src
+│   │   │   ├── test
+│   │   │   │   ├── routes.test.ts
+│   │   │   ├── cache
+│   │   │   ├── model
+│   │   │   ├── routes
+│   │   │── index.ts
+│   │   │── server.ts
+
+```
+
+Let's get into build and deployment steps. 
+
+Open two terminal or command-line shell then navigate to the application path and execute the below script. 
+
+**Run the express server**
+
+In Terminal#1 Navigate to ```react-node-express\server``` and execute below command 
+
+> Terminal#1: npm install && && npm run start
+
+**Run the react client**
+
+In Terminal#2 Navigate to ```react-node-express\client``` and execute below command 
+
+> Terminal#2: npm install && && npm run start
+
+### Test cases execution
+
+**Server**
+
+Execute below command 
+
+> Terminal#1: npm run test
+
+**Client**
+
+> npm run test
+
+### Test Results Screen
+
+Server
+
+![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+
+Client 
+
+![alt text](https://github.com/mohancse1707/mk-scheduler-webapp/tree/master/src/main/webapp/static/images/hipster2x.png?raw=true)
+
+[Node]:https://nodejs.org/download/release/v12.13.0/
+

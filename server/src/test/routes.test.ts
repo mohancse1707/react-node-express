@@ -3,6 +3,12 @@ import server from '../server';
 
 const request = supertest(server);
 
+describe('sasadasd',  () => {
+    it('Testing to see if Jest works', () => {
+        expect(1).toBe(1)
+    })
+});
+
 it('Gets All beer recipes endpoint', async done => {
     // Sends GET Request to / endpoint
     const response = await request.get('/getAllBeerRecipes')
