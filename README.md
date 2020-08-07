@@ -36,4 +36,6 @@ npm install -D @types/node
 
 npm install -D ts-node nodemon
 
-npm install -S axios jsonfile
+npm install -S axios
+
+npm install jest --save-dev

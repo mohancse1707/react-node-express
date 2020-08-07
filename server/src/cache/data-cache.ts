@@ -25,6 +25,7 @@ class DataCache {
                 const response = await this.fetchFunction();
                 this.cache = response.data;
                 this.fetchDate = new Date();
+                console.log('Current time =', new Date().toLocaleString())
                 console.log('Next expiry time =', new Date(this.fetchDate.getTime() + this.millisecondsToLive).toLocaleString())
                 return response.data;
             } catch(e) {

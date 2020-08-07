@@ -13,7 +13,7 @@ const ServerRoutes = (server: Express) => {
 
     /* Load the data on server startup and keep it in cache manager */
     server.get('/', async (req, res) => {
-        return res.json(await initializeCache.getData());
+       return res.send('Server is up');
     });
 
     server.get('/getAllBeerRecipes', async (req, res) => {
@@ -22,7 +22,7 @@ const ServerRoutes = (server: Express) => {
 
     /* Search data by bearName */
     server.get('/search/:beerName', async (req, res) => {
-        let list : any[] = await initializeCache.getData();
+        const list : any[] = await initializeCache.getData();
         console.log('Search parameter value', req.params.beerName);
         const listFilter = list.filter(value => value.name === req.params.beerName);
         return res.json(listFilter);
