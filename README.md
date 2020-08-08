@@ -85,7 +85,29 @@ Server
 
 Client 
 
-![Server](./client/src/webapp/static/images/server-jest.JPG)
+![Server](./client/src/webapp/static/images/client-jest.JPG)
+
+### Features
+
+* No Database or JSON or full text search engines
+* In-Memory Cache Manager at backnd to serve data 
+* Having Configurable cache life or "time-to-live" (TTL)
+* Reusable for other types of data
+* Unit test using [Jest]
+* Having better memory efficiency 
+
+### Nonexistent Features
+
+* Client test cases covered only for few functions not for all functions
+
+![Server](./client/src/webapp/static/images/client-jest.JPG)
+
+### In Memory Cache Screen
+
+* "time-to-live" (TTL) set as 1 Minute 
+
+![Server](./client/src/webapp/static/images/server-cache.JPG)
 
 [Node]:https://nodejs.org/download/release/v12.13.0/
+[Jest]:https://www.npmjs.com/package/jest
 
