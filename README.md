@@ -4,7 +4,7 @@ Sample web application for data list, search and sorting data without any databa
 
 ### Getting Started
 
-This application is developed with decoupled architecture design where server and client deployed separately.
+This application is developed with decoupled architecture design where server and client apps are deployed separately.
 
 
 ### Technologies
