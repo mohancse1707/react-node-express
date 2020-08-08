@@ -31,7 +31,7 @@ This application is developed with decoupled architecture design where server an
 
 ```bash
 
-├── public
+├── react-node-express
 │   ├── client
 │   │   ├── src
 │   │   │   ├── test
@@ -57,13 +57,13 @@ Open two terminal or command-line shell then navigate to the application path an
 
 In Terminal#1 Navigate to ```react-node-express\server``` and execute below command 
 
-> Terminal#1: npm install && && npm run start
+> Terminal#1: npm install && npm run start
 
 **Run the react client**
 
 In Terminal#2 Navigate to ```react-node-express\client``` and execute below command 
 
-> Terminal#2: npm install && && npm run start
+> Terminal#2: npm install && npm run start
 
 ### Test cases execution
 
@@ -81,11 +81,11 @@ Execute below command
 
 Server
 
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+![Server](./client/src/webapp/static/images/server-jest.JPG)
 
 Client 
 
-![alt text](https://github.com/mohancse1707/mk-scheduler-webapp/tree/master/src/main/webapp/static/images/hipster2x.png?raw=true)
+![Server](./client/src/webapp/static/images/server-jest.JPG)
 
 [Node]:https://nodejs.org/download/release/v12.13.0/
 
