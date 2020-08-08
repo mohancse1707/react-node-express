@@ -93,7 +93,7 @@ Client
 ### Features
 
 * No Database or JSON or full text search engines
-* In-Memory Cache Manager at backnd to serve data 
+* In-Memory Cache Manager at backend to serve data 
 * Having Configurable cache life or "time-to-live" (TTL)
 * Reusable for other types of data
 * Unit test using [Jest]
@@ -102,8 +102,6 @@ Client
 ### Nonexistent Features
 
 * Client test cases covered only for few functions not for all functions
-
-![Server](./client/src/webapp/static/images/client-jest.JPG)
 
 ### In Memory Cache Screen
 
