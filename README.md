@@ -75,7 +75,7 @@ Execute below command
 
 **Client**
 
-> npm run test
+> Terminal#2: npm run test
 
 ### Test Results Screen
 
