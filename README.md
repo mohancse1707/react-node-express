@@ -9,19 +9,22 @@ This application is developed with decoupled architecture design where server an
 
 ### Technologies
 
-**Front End**
-
-* [Node] v12.x.x 
-* Npm v6.x.x
-* Typescript
-
-**Back End**
+**Frontend**
 
 * [Node] v12.x.x 
 * Npm v6.x.x
 * React Redux
 * Typescript
 * Webpack
+
+**Backend**
+
+* [Node] v12.x.x 
+* [ExpressJS]
+* Npm v6.x.x
+* Typescript
+
+
 
 ```Make sure node is installed and set the path in the system before proceeding to deployment steps.```
 
@@ -110,4 +113,4 @@ Client
 
 [Node]:https://nodejs.org/download/release/v12.13.0/
 [Jest]:https://www.npmjs.com/package/jest
-
+[ExpressJS]:https://www.npmjs.com/package/express
